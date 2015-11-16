@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+    <meta charset="utf-8" />
+    <title>Tessellated Triangle</title>
+  </head>
+
+  <body onload="main()">
+    <canvas id="webgl" width="400" height="400">
+    Please use a browser that supports "canvas"
+    </canvas>
+
+    <script src="lib/webgl-utils.js"></script>
+    <script src="lib/webgl-debug.js"></script>
+    <script src="lib/cuon-utils.js"></script>
+    <script src="lib/cuon-matrix.js"></script>
+    <script src="twist.js"></script>
+	
+	<div id="bottom">
+        <h3>Functionality: </h3>
+        
+        <form>
+        <table> 
+        <tr> 
+        	<td>Theta:</td> 
+        	<td><input type="range" min="0" max="360" step="5" value="0" 
+                onchange="APP.setTheta(this.value, 'theta')" />
+                <span id="theta">0</span>
+            </td> 
+        </tr> 
+        <tr> 
+        	<td>Subdivide:</td> 
+        	<td><input type="range" min="0" max="6" step="1" value="4" 
+                onchange="APP.setSubdivide(this.value, 'subdivide')" />
+                <span id="subdivide">4</span></td> 
+        </tr> 
+        <tr> 
+        	<td>Twist?:</td> 
+        	<td><input type="radio" name="twist" value="yes"
+                    onchange="APP.setTwist(true)" /> yes
+                <input type="radio" name="twist" value="no" checked="checked"
+                    onchange="APP.setTwist(false)" /> no</td> 
+        </tr> 
+        </table> 
+
+               
+        </form>
+    </div>
+  </body>
+</html>
